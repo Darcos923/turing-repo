@@ -9,7 +9,7 @@ Los frameworks utilizados para ello han sido [LangChain](https://python.langchai
 1. Clonar el repositorio
 
 ```bash
-git clone url
+git clone https://github.com/Darcos923/turing-repo.git
 ```
 
 2. Instalar requerimientos **section-1**

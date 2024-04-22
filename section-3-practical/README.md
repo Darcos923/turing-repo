@@ -9,7 +9,7 @@ El servicio ha sido desarrollado con [FastAPI](https://fastapi.tiangolo.com/) y 
 1. Clonar el repositorio
 
 ```bash
-git clone url
+git clone https://github.com/Darcos923/turing-repo.git
 ```
 
 2. Instalar requerimientos de la **section-3-practical**
