@@ -1,0 +1,9 @@
+version: "3"
+services:
+  yolov8_fastapi:
+    build: .
+    container_name: yolo-app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
