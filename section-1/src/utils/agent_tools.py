@@ -24,7 +24,7 @@ def retriever_tool_fn(retriever: VectorStoreRetriever) -> Tool:
         retriever_tool = create_retriever_tool(
             retriever,
             name="retriever_tool",
-            description="Para preguntas que no se encuentren en el historial del chat, utiliza esta herramienta y devuelve su contenido",
+            description="Utiliza esta herramienta para responder a preguntas relacionadas con la busqueda en los documentos adjuntos.", #Para preguntas que no se encuentren en el historial del chat, utiliza esta herramienta y devuelve su contenido
         )
         return retriever_tool
     except Exception as e:

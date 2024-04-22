@@ -60,7 +60,6 @@ if uploaded_files:
                 
                 raw_document = PyPDFLoader(file_path).load()
                 documents.extend(raw_document)
-                print(f"Number of files loaded: {len(raw_document)}")
                 
         # Chunk the data, create embeddings, and save in vectorstore
         text_splitter = RecursiveCharacterTextSplitter(
@@ -115,9 +114,11 @@ if prompt := st.chat_input(placeholder="Enter your question"):
     retriever_tool = retriever_tool_fn(retriever=retriever)
     tools = [retriever_tool, agenda_tool]
     
+    system_prompt = """Eres un asistente personal con herramientas que puedes utilizar."""
+    
     # Creating a prompt template to guide the agent
     prompt_template = ChatPromptTemplate.from_messages([
-        SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], template='You are a helpful assistant')),
+        SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], template=system_prompt)),
         MessagesPlaceholder(variable_name='chat_history', optional=True),
         HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['input'], template='{input}')),
         MessagesPlaceholder(variable_name='agent_scratchpad')
