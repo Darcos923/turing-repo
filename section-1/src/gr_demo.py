@@ -131,7 +131,7 @@ agent = agent_pipeline(vector_store)
 
 # Setup Gradio interface
 with gr.Blocks() as demo:
-    chatbot = gr.Chatbot([], elem_id="chatbot", bubble_full_width=True, height=600)
+    chatbot = gr.Chatbot([], elem_id="chatbot", bubble_full_width=True, height=600, avatar_images=["avatars/cara.png", "avatars/copilot.png"])
     chat_input = gr.MultimodalTextbox(interactive=True, file_types=[".pdf"], placeholder="Indica una pregunta o sube archivo/s...", show_label=False)
     chat_msg = chat_input.submit(add_message, [chatbot, chat_input], [chatbot, chat_input])
     bot_msg = chat_msg.then(bot, chatbot, chatbot, api_name="bot_response")
